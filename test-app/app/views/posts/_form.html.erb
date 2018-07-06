@@ -1,0 +1,14 @@
+<%
+=begin %>
+<%= form_for @post do |f| %>
+	<%
+=end %>
+<%= form_for @post do |f| %>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit plain , class: "btn btn-light" %>
+  </div>
+<% end %>
