@@ -9,8 +9,10 @@
   </head>
 
   <body>
-  	<%= render 'header/header' %> 
-    	<%= yield %>
-    <%= render 'footer/footer' %> 
+  	<%= render 'header/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'footer/footer' %> 
+    </div>
   </body>
 </html>

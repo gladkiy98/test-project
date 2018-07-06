@@ -1,7 +1,26 @@
-<tbody>
-  <tr>
-    <td>
-      <%= post.content %>
-    </td>
-  </tr>
-</tbody>
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= post.content %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <% if current_user.id == post.user_id %>
+        |
+        <%= link_to "Edit", edit_post_path(post) %>
+        |
+        <%= link_to "Delete", post_path(post), method: :delete, data: {confirm: "Are you sure?"} %>
+
+        <% end %>
+      </td>
+      <hr>
+    </tr>
+  </tbody>
+</table>

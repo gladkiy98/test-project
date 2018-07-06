@@ -1,0 +1,8 @@
+<li class="nav-item edit">
+  <i class="fas fa-user"></i>
+  <%= link_to @header_text, edit_user_registration_path, class: "nav-link" %>
+</li>
+<li class="nav-item signout">
+  <i class="fas fa-sign-out-alt"></i>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+</li>
