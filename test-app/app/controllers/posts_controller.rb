@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 	before_action :set_post, only: %i[show edit update destroy]
 	before_action :all_posts, only: %i[index]
 
-	def index
+	def index		
 		@post = post.new
 	end
 
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 			redirect_to root_url
 			flash[:success] = 'Post create'
 		else
-			render :new
+			redirect_to root_url
 		end
 	end
 

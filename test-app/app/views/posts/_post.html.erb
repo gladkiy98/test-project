@@ -1,7 +1,7 @@
 <table class="table table-borderless">
   <thead>
     <tr>
-      <th scope="col">Username</th>
+      <th scope="col"><%= link_to post.user.first_name, post.user %></th>
     </tr>
   </thead>
   <tbody>
@@ -13,14 +13,12 @@
     <tr>
       <td>
         <% if current_user.id == post.user_id %>
-        |
         <%= link_to "Edit", edit_post_path(post) %>
         |
         <%= link_to "Delete", post_path(post), method: :delete, data: {confirm: "Are you sure?"} %>
-
         <% end %>
       </td>
-      <hr>
     </tr>
+    <hr>
   </tbody>
 </table>
