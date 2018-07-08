@@ -1,13 +1,12 @@
 class PostsController < ApplicationController
-	before_action :set_post, only: %i[show edit update destroy]
-	before_action :all_posts, only: %i[index]
+	before_action :set_post, only: %i[edit update destroy upvote downvote]
 
-	def index		
+	def index	
 		@post = post.new
+		@posts = post.all
 	end
 
-	def new
-		@post = post.new
+	def show
 	end
 
 	def create
@@ -38,6 +37,16 @@ class PostsController < ApplicationController
 		flash[:success] = 'Post deleted successfully'
 	end
 
+	def upvote
+		@post.upvote_from current_user
+		redirect_to root_url
+	end
+
+	def downvote
+		@post.downvote_from current_user
+		redirect_to root_url
+	end
+
 	private
 
 	def post_params
@@ -46,10 +55,6 @@ class PostsController < ApplicationController
 
 	def set_post
 		@post = post.find(params[:id])
-	end
-
-	def all_posts
-		@posts = post.all
 	end
 
 	def post

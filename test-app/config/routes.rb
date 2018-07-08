@@ -3,7 +3,12 @@ Rails.application.routes.draw do
 
   authenticated :user do
     root 'posts#index', as: :authenticated_root
-	  resources :posts
+	  resources :posts do
+	  	member do
+	  		put "like" => "posts#upvote"
+	  		put "unlike" => "posts#downvote"
+	  	end
+	  end
   end
 
   root to: redirect('/users/sign_in')
