@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="col-md-12">
+		<% flash.each do |name, message| %>
+			<div class="alert <%= bootstrap_class_for(name) %>">
+<%
+=begin
+%>
+			<button type="button" class="close" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+<%
+=end
+%>
+				<%= message %>
+			</div>
+		<% end %>
+	</div>
+</div>

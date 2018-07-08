@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
-	before_action :set_post, only: %i[edit update destroy upvote downvote]
+	before_action :set_post, only: %i[edit update destroy upvote downvote delete_vote]
 
 	def index	
 		@post = post.new
 		@posts = post.paginate(page: params[:page], :per_page => 5)
+	#	@post1 = Post.find(params[:id])
 	end
 
 	def show
@@ -44,8 +45,13 @@ class PostsController < ApplicationController
 
 	def downvote
 		@post.downvote_from current_user
-		redirect_to root_url
+		if @post.votes_for.size > 2
+			@post.destroy
+		else
+			redirect_to root_url
+		end
 	end
+
 
 	private
 

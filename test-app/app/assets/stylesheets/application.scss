@@ -16,8 +16,12 @@
 
  @import "bootstrap";
 
-.like:hover {
+.like:hover, .dislike:hover {
 	text-decoration: none;
+}
+
+.like, .dislike{
+	transition: all 1s;
 }
 
 .pagination{
@@ -49,4 +53,22 @@
 .disabled{
 	border-radius: 3px;
 	text-decoration: none;
+}
+
+.posts{
+	transition: all 1s;
+}
+
+.fa-user{
+	position: absolute;
+	font-size: 15px;
+	padding: 11px 0px 0px 0px;
+	color: #77abff;
+}
+
+.fa-sign-in-alt, .fa-sign-out-alt{
+	position: absolute;
+	font-size: 16px;
+	padding: 11px 0px 0px 0px;
+	color: #77abff;
 }
