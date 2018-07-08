@@ -19,3 +19,34 @@
 .like:hover {
 	text-decoration: none;
 }
+
+.pagination{
+	font-size: 16px;
+	a {
+		padding: 5px;
+		text-decoration: none;
+		border-radius: 3px;
+		transition: all 0.4s;
+	}
+	a:hover {
+		transition: all 0.4s;
+		background-color: #99deff;
+	}
+}
+
+.previous_page, .next_page {
+	padding: 5px;
+	text-decoration: none;
+}
+
+.current {
+	padding: 5px;
+	padding-top: 5px;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+.disabled{
+	border-radius: 3px;
+	text-decoration: none;
+}

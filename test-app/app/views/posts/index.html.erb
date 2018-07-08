@@ -1,5 +1,18 @@
-	<%= render 'form', plain: "Create post" %>
-	<%= render partial: 'post', collection: @posts %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-5">
+			<%= render 'form', plain: "Create post" %>
+		</div>
+
+		<div class="col-sm-7">
+			<%= will_paginate %>
+				<%= render partial: 'post', collection: @posts %>
+			<%= will_paginate %>
+		</div>
+	</div>
+</div>
+
+		
 
 
 
